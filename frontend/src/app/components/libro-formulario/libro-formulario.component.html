@@ -1,0 +1,64 @@
+<div class="formulario-container">
+  <h2>Registrar Nuevo Libro</h2>
+  <p class="txt-subtitulo">Asocie un nuevo ejemplar al catálogo de un autor existente.</p>
+
+  <form [formGroup]="libroForm" (ngSubmit)="enviarDatos()">
+
+    <div class="form-group">
+      <label>Título del Libro *</label>
+      <input type="text" formControlName="titulo" class="form-control" placeholder="Ej. Cien años de soledad" />
+      @if (libroForm.get('titulo')?.invalid && libroForm.get('titulo')?.touched) {
+        <small class="txt-error">El título es requerido (mínimo 2 caracteres).</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label>Código ISBN *</label>
+      <input type="text" formControlName="isbn" class="form-control" placeholder="Ej. 978-3-16-148410-0" />
+      @if (libroForm.get('isbn')?.invalid && libroForm.get('isbn')?.touched) {
+        <small class="txt-error">Introduzca un formato de ISBN válido.</small>
+      }
+    </div>
+
+    <div style="display: flex; gap: 15px;">
+      <div class="form-group" style="flex: 1;">
+        <label>Año de Publicación *</label>
+        <input type="number" formControlName="anio" class="form-control" />
+        @if (libroForm.get('anio')?.invalid && libroForm.get('anio')?.touched) {
+          <small class="txt-error">Año no válido.</small>
+        }
+      </div>
+
+      <div class="form-group" style="flex: 1;">
+        <label>Género Literario *</label>
+        <input type="text" formControlName="genero" class="form-control" placeholder="Ej. Realismo Mágico" />
+        @if (libroForm.get('genero')?.invalid && libroForm.get('genero')?.touched) {
+          <small class="txt-error">El género es obligatorio.</small>
+        }
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Asignar Autor Completo *</label>
+      <select formControlName="autorId" class="form-control selection-box">
+        <option value="" disabled selected>-- Seleccione un autor del sistema --</option>
+        @for (autor of autores(); track autor.id) {
+          <option [value]="autor.id">{{ autor.nombre }} ({{ autor.nacionalidad }})</option>
+        }
+      </select>
+      @if (libroForm.get('autorId')?.invalid && libroForm.get('autorId')?.touched) {
+        <small class="txt-error">Debe vincular el libro a un autor obligatoriamente.</small>
+      }
+    </div>
+
+    <div class="btn-group">
+      <button type="submit" [disabled]="libroForm.invalid" class="btn btn-success">
+        Guardar Libro
+      </button>
+      <a routerLink="/" class="btn btn-cancelar">
+        Cancelar
+      </a>
+    </div>
+
+  </form>
+</div>
