@@ -1,0 +1,92 @@
+.lista-container {
+  margin-top: 30px;
+  font-family: sans-serif;
+}
+
+.lista-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.lista-header h2 {
+  color: #212529;
+  margin: 0;
+}
+
+/* Clases de utilidad para botones genéricos */
+.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Estructuración de la tabla principal */
+.tabla-autores {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.tabla-autores th {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 12px;
+  font-weight: 600;
+  color: #495057;
+}
+
+.tabla-autores td {
+  padding: 12px;
+  border: 1px solid #dee2e6;
+  color: #212529;
+}
+
+.tabla-autores tbody tr {
+  border-bottom: 1px solid #dee2e6;
+  transition: background-color 0.15s ease;
+}
+
+.tabla-autores tbody tr:hover {
+  background-color: #fdfdfd;
+}
+
+/* Indicador visual del conteo de elementos de la relación */
+.badge-libros {
+  background-color: #6c757d;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.link-accion {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.link-accion:hover {
+  text-decoration: underline;
+}
+
+.lista-vacia {
+  text-align: center;
+  padding: 30px !important;
+  color: #6c757d;
+  font-style: italic;
+}

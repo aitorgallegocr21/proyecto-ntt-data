@@ -8,7 +8,8 @@ import { AutorService } from '../../services/autor.service';
   selector: 'app-autor-lista',
   standalone: true,
   imports: [CommonModule, RouterLink],
-  templateUrl: './autor-lista.component.html'
+  templateUrl: './autor-lista.component.html',
+  styleUrls: ['./autor-lista.component.css']
 })
 export class AutorListaComponent {
   // Inyección del servicio HTTP encargado de la comunicación con la API REST
