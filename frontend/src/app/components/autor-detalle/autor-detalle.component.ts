@@ -8,7 +8,8 @@ import { Autor } from '../../models/biblioteca.model';
   selector: 'app-autor-detalle',
   standalone: true,
   imports: [CommonModule, RouterLink],
-  templateUrl: './autor-detalle.component.html'
+  templateUrl: './autor-detalle.component.html',
+  styleUrls: ['./autor-detalle.component.css']
 })
 export class AutorDetalleComponent implements OnInit { // Nombre unificado de la clase
   private route = inject(ActivatedRoute);

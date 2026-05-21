@@ -1,35 +1,35 @@
-<div class="container" style="margin-top: 30px; font-family: sans-serif;">
+<div class="detalle-container">
   @if (cargando()) {
-    <p>Cargando información del autor...</p>
+    <p class="txt-estado">Cargando información del autor...</p>
   } @else {
     @if (autor()) {
-      <div style="margin-bottom: 30px;">
+      <div class="ficha-autor">
         <h2>Ficha del Autor: {{ autor()?.nombre }}</h2>
         <p><strong>Nacionalidad:</strong> {{ autor()?.nacionalidad }}</p>
-        <a routerLink="/" style="color: #007bff; text-decoration: none;">&larr; Volver al Listado</a>
+        <a routerLink="/" class="link-volver">&larr; Volver al Listado</a>
       </div>
 
       <h3>Libros Publicados (Relación 1:M)</h3>
-      <table style="width: 100%; border-collapse: collapse; text-align: left; margin-top: 15px;">
+      <table class="tabla-libros">
         <thead>
-          <tr style="background-color: #f8f9fa; border-bottom: 2px solid #dee2e6;">
-            <th style="padding: 12px; border: 1px solid #dee2e6;">Título</th>
-            <th style="padding: 12px; border: 1px solid #dee2e6;">ISBN</th>
-            <th style="padding: 12px; border: 1px solid #dee2e6;">Año</th>
-            <th style="padding: 12px; border: 1px solid #dee2e6;">Género</th>
+          <tr>
+            <th>Título</th>
+            <th>ISBN</th>
+            <th>Año</th>
+            <th>Género</th>
           </tr>
         </thead>
         <tbody>
           @for (libro of autor()?.libros; track libro.id) {
-            <tr style="border-bottom: 1px solid #dee2e6;">
-              <td style="padding: 12px; border: 1px solid #dee2e6;"><strong>{{ libro.titulo }}</strong></td>
-              <td style="padding: 12px; border: 1px solid #dee2e6;">{{ libro.isbn }}</td>
-              <td style="padding: 12px; border: 1px solid #dee2e6;">{{ libro.anio }}</td>
-              <td style="padding: 12px; border: 1px solid #dee2e6;">{{ libro.genero }}</td>
+            <tr>
+              <td><strong>{{ libro.titulo }}</strong></td>
+              <td>{{ libro.isbn }}</td>
+              <td>{{ libro.anio }}</td>
+              <td>{{ libro.genero }}</td>
             </tr>
           } @empty {
             <tr>
-              <td colspan="4" style="text-align: center; padding: 20px; color: #6c757d;">
+              <td colspan="4" class="badge-vacio">
                 Este autor no tiene libros registrados en la biblioteca actualmente.
               </td>
             </tr>
@@ -37,8 +37,10 @@
         </tbody>
       </table>
     } @else {
-      <p style="color: red;">No se ha podido encontrar el autor especificado.</p>
-      <a routerLink="/" style="color: #007bff; text-decoration: none;">&larr; Volver al Listado</a>
+      <div class="error-container">
+        <p class="txt-error">No se ha podido encontrar el autor especificado.</p>
+        <a routerLink="/" class="link-volver">&larr; Volver al Listado</a>
+      </div>
     }
   }
 </div>
