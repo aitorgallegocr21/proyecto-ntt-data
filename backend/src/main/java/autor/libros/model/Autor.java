@@ -1,8 +1,16 @@
 package autor.libros.model;
 
-import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Autor {
@@ -14,6 +22,7 @@ public class Autor {
     private String nacionalidad;
 
     @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Libro> libros = new ArrayList<>();
 
     public Long getId() { return id; }
