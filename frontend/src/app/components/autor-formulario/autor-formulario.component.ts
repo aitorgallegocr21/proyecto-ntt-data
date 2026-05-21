@@ -26,7 +26,6 @@ export class AutorFormularioComponent {
       const nuevoAutor = {
         nombre: this.autorForm.value.nombre ?? '',
         nacionalidad: this.autorForm.value.nacionalidad ?? '',
-        libros: []
       };
       this.autorService.crearAutor(nuevoAutor).subscribe({
         next: () => this.router.navigate(['/']),
