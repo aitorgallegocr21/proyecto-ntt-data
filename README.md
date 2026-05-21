@@ -117,4 +117,4 @@ Proyecto desarrollado en grupo por alumnos de 1º FP Dual.
 Jesús Barroso Barriga
 Miguel Sánchez-Lafuente Bosch
 Aitor Gallego-Casilda Romero
-Álvaro García Roque
+Álvaro Daniel García Roque
