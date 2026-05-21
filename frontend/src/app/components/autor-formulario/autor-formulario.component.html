@@ -1,0 +1,23 @@
+<div class="formulario-container">
+  <h2>Registrar Nuevo Autor</h2>
+  <form [formGroup]="autorForm" (ngSubmit)="enviarDatos()">
+    <div class="form-group">
+      <label>Nombre del Autor *</label>
+      <input type="text" formControlName="nombre" class="form-control" placeholder="Ej. Miguel de Cervantes" />
+      @if (autorForm.get('nombre')?.invalid && autorForm.get('nombre')?.touched) {
+        <small class="txt-error">El nombre es obligatorio (mínimo 3 caracteres).</small>
+      }
+    </div>
+    <div class="form-group">
+      <label>Nacionalidad *</label>
+      <input type="text" formControlName="nacionalidad" class="form-control" placeholder="Ej. Española" />
+      @if (autorForm.get('nacionalidad')?.invalid && autorForm.get('nacionalidad')?.touched) {
+        <small class="txt-error">La nacionalidad es requerida.</small>
+      }
+    </div>
+    <div class="btn-group">
+      <button type="submit" [disabled]="autorForm.invalid" class="btn btn-primary">Guardar Autor</button>
+      <a routerLink="/" class="btn" style="background-color: #6c757d; color: white;">Cancelar</a>
+    </div>
+  </form>
+</div>
