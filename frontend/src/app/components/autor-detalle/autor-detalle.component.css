@@ -1,0 +1,85 @@
+.detalle-container {
+  margin-top: 30px;
+  font-family: sans-serif;
+}
+
+.txt-estado {
+  color: #6c757d;
+  font-style: italic;
+}
+
+.ficha-autor {
+  margin-bottom: 30px;
+}
+
+.ficha-autor h2 {
+  color: #212529;
+  margin-bottom: 10px;
+}
+
+.link-volver {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.link-volver:hover {
+  text-decoration: underline;
+}
+
+h3 {
+  color: #495057;
+  margin-top: 20px;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 8px;
+}
+
+.tabla-libros {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  margin-top: 15px;
+}
+
+.tabla-libros th {
+  background-color: #f8f9fa;
+  padding: 12px;
+  border: 1px solid #dee2e6;
+  font-weight: 600;
+  color: #495057;
+}
+
+.tabla-libros td {
+  padding: 12px;
+  border: 1px solid #dee2e6;
+}
+
+.tabla-libros tbody tr {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.tabla-libros tbody tr:hover {
+  background-color: #fdfdfd;
+}
+
+.badge-vacio {
+  text-align: center;
+  padding: 20px !important;
+  color: #6c757d;
+  font-style: italic;
+}
+
+.error-container {
+  padding: 20px;
+  border: 1px solid #f5c6cb;
+  background-color: #f8d7da;
+  border-radius: 4px;
+}
+
+.txt-error {
+  color: #721c24;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+}

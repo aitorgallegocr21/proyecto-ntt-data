@@ -1,0 +1,45 @@
+<div class="lista-container">
+  <div class="lista-header">
+    <h2>Listado de Autores Registrados</h2>
+    <a routerLink="/nuevo-autor" class="btn btn-primary">
+      + Añadir Nuevo Autor
+    </a>
+  </div>
+
+  <table class="tabla-autores">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre Completo</th>
+        <th>Nacionalidad</th>
+        <th>Nº Libros</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (autor of autores(); track autor.id) {
+        <tr>
+          <td>{{ autor.id }}</td>
+          <td><strong>{{ autor.nombre }}</strong></td>
+          <td>{{ autor.nacionalidad }}</td>
+          <td>
+            <span class="badge-libros">
+              {{ autor.libros?.length || 0 }}
+            </span>
+          </td>
+          <td>
+            <a [routerLink]="['/autor', autor.id]" class="link-accion">
+              Ver Detalles
+            </a>
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="5" class="lista-vacia">
+            No se han encontrado registros de autores en la base de datos H2. Asegúrese de que el servidor Backend esté en ejecución.
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
