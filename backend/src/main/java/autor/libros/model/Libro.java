@@ -1,5 +1,7 @@
 package autor.libros.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,6 +22,7 @@ public class Libro {
 
     @ManyToOne
     @JoinColumn(name = "autor_id")
+    @JsonBackReference
     private Autor autor;
 
     public Long getId() { return id; }
