@@ -1,0 +1,144 @@
+.lista-container {
+  margin-top: 40px;
+  padding: 30px;
+  background: rgba(18, 24, 38, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.lista-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 20px;
+}
+
+.lista-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #ffffff 0%, #a7f3d0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+/* Botones con estilo exótico */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 22px;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 234, 0.4);
+}
+
+/* Estilo personalizado para el botón verde de Libros utilizando el inline-style previo */
+a[style*="background-color: #28a745"] {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+a[style*="background-color: #28a745"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* Rediseño futurista de la Tabla */
+.tabla-autores {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px; /* Espaciado entre filas */
+}
+
+.tabla-autores th {
+  padding: 16px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #9ca3af;
+  font-weight: 600;
+  border: none;
+}
+
+.tabla-autores td {
+  padding: 18px 16px;
+  background: rgba(30, 41, 59, 0.4);
+  color: #e5e7eb;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.tabla-autores td:first-child {
+  border-left: 1px solid rgba(255, 255, 255, 0.04);
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  color: #10b981; /* ID resaltado en esmeralda */
+  font-weight: bold;
+}
+
+.tabla-autores td:last-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.tabla-autores tbody tr:hover td {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(16, 185, 129, 0.3);
+  transform: scale(1.002);
+}
+
+/* Indicador de relación esmeralda brillante */
+.badge-libros {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.1);
+}
+
+.link-accion {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.link-accion:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+.lista-vacia {
+  text-align: center;
+  padding: 40px !important;
+  color: #9ca3af;
+  font-style: italic;
+  background: rgba(30, 41, 59, 0.2) !important;
+  border-radius: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.1) !important;
+}

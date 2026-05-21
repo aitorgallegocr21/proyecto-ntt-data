@@ -1,0 +1,46 @@
+<div class="detalle-container">
+  @if (cargando()) {
+    <p class="txt-estado">Cargando información del autor...</p>
+  } @else {
+    @if (autor()) {
+      <div class="ficha-autor">
+        <h2>Ficha del Autor: {{ autor()?.nombre }}</h2>
+        <p><strong>Nacionalidad:</strong> {{ autor()?.nacionalidad }}</p>
+        <a routerLink="/" class="link-volver">&larr; Volver al Listado</a>
+      </div>
+
+      <h3>Libros Publicados (Relación 1:M)</h3>
+      <table class="tabla-libros">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>ISBN</th>
+            <th>Año</th>
+            <th>Género</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (libro of autor()?.libros; track libro.id) {
+            <tr>
+              <td><strong>{{ libro.titulo }}</strong></td>
+              <td>{{ libro.isbn }}</td>
+              <td>{{ libro.anio }}</td>
+              <td>{{ libro.genero }}</td>
+            </tr>
+          } @empty {
+            <tr>
+              <td colspan="4" class="badge-vacio">
+                Este autor no tiene libros registrados en la biblioteca actualmente.
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    } @else {
+      <div class="error-container">
+        <p class="txt-error">No se ha podido encontrar el autor especificado.</p>
+        <a routerLink="/" class="link-volver">&larr; Volver al Listado</a>
+      </div>
+    }
+  }
+</div>
